@@ -6,6 +6,8 @@
   "description": "A brutalist-styled component library",
   "scripts": {
     "prepare": "panda codegen",
+    "panda:dev": "panda --watch",
+    "panda:build": "panda --build",
     "dev": "vite",
     "dev:panda": "panda --watch",
     "build": "tsc -b && vite build",
@@ -49,5 +51,8 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",
     "vite": "^7.1.2"
+  },
+  "dependencies": {
+    "lucide-react": "^0.540.0"
   }
 }
