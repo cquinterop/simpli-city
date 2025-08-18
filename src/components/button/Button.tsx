@@ -103,8 +103,8 @@ const StyledButton = styled("button", {
   },
 });
 
-const Loader = styled(LoaderCircle, {
+export const Loader = styled(LoaderCircle, {
   base: {
-    animation: "spin",
+    animation: "spin 1s linear infinite",
   },
 });
