@@ -34,6 +34,7 @@ export const Default: Story = {
   args: {
     children: 'Click me',
     variant: 'standard',
+    "aria-label": "Click me"
   },
 };
 
@@ -46,28 +47,35 @@ export const Outlined: Story = {
 
 export const Loading: Story = {
   args: {
-    children: 'Submitting',
+    children: 'Click me',
     isLoading: true,
   },
 };
 
 export const Disabled: Story = {
   args: {
-    children: 'Disabled',
+    children: 'Click me',
     disabled: true,
   },
 };
 
-export const WithIconStart: Story = {
+export const WithIcon: Story = {
   args: {
-    children: 'Download',
-    startIcon: <Download />,
+    children: 'Click me',
+    icon: <Download />,
   },
 };
 
-export const WithIconEnd: Story = {
+export const WithIconRight: Story = {
   args: {
-    children: 'Download',
-    endIcon: <Download />,
+    children: 'Click me',
+    icon: <Download />,
+    iconPosition: 'right',
+  },
+};
+
+export const WithOnlyIcon: Story = {
+  args: {
+    icon: <Download />,
   },
 };

@@ -1,5 +1,5 @@
 import { type ComponentProps, type ReactNode } from "react";
-import { LoaderCircle } from 'lucide-react';
+import { LoaderCircle } from "lucide-react";
 
 import { styled } from "../../../styled-system/jsx";
 
@@ -14,17 +14,17 @@ export interface ButtonStyles {
 interface ButtonProps extends ComponentProps<"button"> {
   sx?: ButtonStyles;
   variant?: ButtonVariant;
-  startIcon?: ReactNode;
-  endIcon?: ReactNode;
+  icon?: ReactNode;
   isLoading?: boolean;
+  iconPosition?: "left" | "right";
 }
 
 const Button = ({
-  startIcon = null,
-  endIcon = null,
   variant = "standard",
-  sx,
   isLoading = false,
+  icon = null,
+  iconPosition = "left",
+  sx,
   children,
   ref,
   ...props
@@ -38,15 +38,14 @@ const Button = ({
       aria-busy={isLoading}
       {...props}
     >
-      {isLoading ? (
-        <Loader aria-label="Loading" />
-      ) : (
-        <>
-          {startIcon}
-          {children}
-          {endIcon}
-        </>
-      )}
+      {isLoading && <Loader aria-label="Loading in progress" />}
+      <StyledContent
+        visibility={isLoading ? "hidden" : "visible"}
+        iconPosition={iconPosition}
+      >
+        {icon}
+        {children}
+      </StyledContent>
     </StyledButton>
   );
 };
@@ -57,22 +56,17 @@ export default Button;
 
 const StyledButton = styled("button", {
   base: {
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "0.5rem",
+    display: "grid",
+    gridTemplateAreas: `"stack"`,
+    placeItems: "center",
     fontWeight: "bold",
     fontSize: "1rem",
     borderWidth: "2px",
     padding: "8px 16px",
-    transitionProperty: "background-color, border-color, color",
-    transitionTimingFunction: "ease",
-    transitionDuration: "200ms",
     cursor: "pointer",
-    animation: "step-start",
     _disabled: {
-      cursor: "not-allowed",
-      opacity: "0.5",
+      pointerEvents: "none",
+      opacity: "0.6",
     },
   },
   variants: {
@@ -105,6 +99,38 @@ const StyledButton = styled("button", {
 
 export const Loader = styled(LoaderCircle, {
   base: {
-    animation: "spin 1s linear infinite",
+    animation: "spin 1.5s linear infinite",
+    gridArea: "stack",
+  },
+});
+
+const StyledContent = styled("span", {
+  base: {
+    display: "inline-flex",
+    alignItems: "center",
+    gridArea: "stack",
+    gap: "0.5rem",
+  },
+  variants: {
+    visibility: {
+      visible: {
+        visibility: "visible",
+      },
+      hidden: {
+        visibility: "hidden",
+      },
+    },
+    iconPosition: {
+      left: {
+        flexDirection: "row",
+      },
+      right: {
+        flexDirection: "row-reverse",
+      },
+    },
+  },
+  defaultVariants: {
+    visibility: "visible",
+    iconPosition: "left",
   },
 });

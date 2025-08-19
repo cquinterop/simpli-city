@@ -2,22 +2,19 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import Button from "./Button";
 
-import "@testing-library/jest-dom";
-
 describe("Button component", () => {
   it("renders children", () => {
     render(<Button>Click me</Button>);
     expect(screen.getByText("Click me")).toBeInTheDocument();
   });
 
-  it("renders start and end icons", () => {
+  it("renders icon", () => {
     render(
-      <Button startIcon={<span>Start</span>} endIcon={<span>End</span>}>
+      <Button icon={<span>Icon</span>}>
         Click
       </Button>
     );
-    expect(screen.getByText("Start")).toBeInTheDocument();
-    expect(screen.getByText("End")).toBeInTheDocument();
+    expect(screen.getByText("Icon")).toBeInTheDocument();
   });
 
   it("applies variants correctly", () => {

@@ -86,10 +86,10 @@ export default defineConfig({
     extend: {
       keyframes: {
         spin: {
-          from: { transform: "rotate(0deg)" },
-          to: { transform: "rotate(360deg)" },
+          from: { rotate: "0deg" },
+          to: { rotate: "360deg" },
         },
-      },  
+      },
     },
   },
   outdir: "styled-system",
