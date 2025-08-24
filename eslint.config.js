@@ -9,7 +9,7 @@ import tseslint from 'typescript-eslint'
 import { globalIgnores } from 'eslint/config'
 
 export default tseslint.config([
-  globalIgnores(['dist']),
+  globalIgnores(['dist', 'node_modules', 'styled-system', 'coverage', '.storybook']),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [

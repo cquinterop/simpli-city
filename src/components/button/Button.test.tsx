@@ -38,7 +38,7 @@ describe("Button component", () => {
 
   it("shows loader when isLoading is true", () => {
     render(<Button isLoading>Click</Button>);
-    expect(screen.getByLabelText("Loading")).toBeInTheDocument();
+    expect(screen.getByLabelText("Loading in progress")).toBeInTheDocument();
   });
 
   it("hides loader when isLoading is false", () => {
