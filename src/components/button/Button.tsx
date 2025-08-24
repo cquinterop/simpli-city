@@ -11,7 +11,7 @@ export interface ButtonStyles {
   roundness?: 1 | 2 | 3 | undefined;
 }
 
-interface ButtonProps extends ComponentProps<"button"> {
+export interface ButtonProps extends ComponentProps<"button"> {
   sx?: ButtonStyles;
   variant?: ButtonVariant;
   icon?: ReactNode;
