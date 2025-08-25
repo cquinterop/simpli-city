@@ -34,7 +34,7 @@ export const Default: Story = {
   args: {
     children: 'Click me',
     variant: 'standard',
-    "aria-label": "Click me"
+    'aria-label': 'Click me',
   },
 };
 

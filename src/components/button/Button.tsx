@@ -1,11 +1,11 @@
-import { Loader, StyledButton, StyledContent } from "./Button.styled";
-import type { ButtonProps } from "./Button.types";
+import { Loader, StyledButton, StyledContent } from './Button.styled';
+import type { ButtonProps } from './Button.types';
 
 const Button = ({
-  variant = "standard",
+  variant = 'standard',
   isLoading = false,
   icon = null,
-  iconPosition = "left",
+  iconPosition = 'left',
   sx,
   children,
   ref,
@@ -22,7 +22,7 @@ const Button = ({
     >
       {isLoading && <Loader aria-label="Loading in progress" />}
       <StyledContent
-        visibility={isLoading ? "hidden" : "visible"}
+        visibility={isLoading ? 'hidden' : 'visible'}
         iconPosition={iconPosition}
       >
         {icon}
@@ -32,6 +32,6 @@ const Button = ({
   );
 };
 
-Button.displayName = "Button";
+Button.displayName = 'Button';
 
 export default Button;

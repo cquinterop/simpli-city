@@ -1,84 +1,84 @@
-import { LoaderCircle } from "lucide-react";
+import { LoaderCircle } from 'lucide-react';
 
-import { styled } from "../../../styled-system/jsx";
+import { styled } from '../../../styled-system/jsx';
 
-export const StyledButton = styled("button", {
+export const StyledButton = styled('button', {
   base: {
-    display: "grid",
+    display: 'grid',
     gridTemplateAreas: `"stack"`,
-    placeItems: "center",
-    fontWeight: "bold",
-    fontSize: "1rem",
-    borderWidth: "2px",
-    padding: "8px 16px",
-    cursor: "pointer",
+    placeItems: 'center',
+    fontWeight: 'bold',
+    fontSize: '1rem',
+    borderWidth: '2px',
+    padding: '8px 16px',
+    cursor: 'pointer',
     _disabled: {
-      pointerEvents: "none",
-      opacity: "0.6",
+      pointerEvents: 'none',
+      opacity: '0.6',
     },
   },
   variants: {
     variant: {
       standard: {
-        bg: "accent",
-        color: "accentFg",
-        borderColor: "accent",
+        bg: 'accent',
+        color: 'accentFg',
+        borderColor: 'accent',
         _hover: { opacity: 0.9 },
       },
       outlined: {
-        bg: "transparent",
-        color: "accent",
-        borderColor: "accent",
-        borderStyle: "solid",
-        _hover: { bg: "surfaceAlt" },
+        bg: 'transparent',
+        color: 'accent',
+        borderColor: 'accent',
+        borderStyle: 'solid',
+        _hover: { bg: 'surfaceAlt' },
       },
     },
     roundness: {
-      1: { borderRadius: "4px" },
-      2: { borderRadius: "8px" },
-      3: { borderRadius: "12px" },
+      1: { borderRadius: '4px' },
+      2: { borderRadius: '8px' },
+      3: { borderRadius: '12px' },
     },
   },
   defaultVariants: {
-    variant: "standard",
+    variant: 'standard',
     roundness: 2,
   },
 });
 
 export const Loader = styled(LoaderCircle, {
   base: {
-    animation: "spin 1.5s linear infinite",
-    gridArea: "stack",
+    animation: 'spin 1.5s linear infinite',
+    gridArea: 'stack',
   },
 });
 
-export const StyledContent = styled("span", {
+export const StyledContent = styled('span', {
   base: {
-    display: "inline-flex",
-    alignItems: "center",
-    gridArea: "stack",
-    gap: "0.5rem",
+    display: 'inline-flex',
+    alignItems: 'center',
+    gridArea: 'stack',
+    gap: '0.5rem',
   },
   variants: {
     visibility: {
       visible: {
-        visibility: "visible",
+        visibility: 'visible',
       },
       hidden: {
-        visibility: "hidden",
+        visibility: 'hidden',
       },
     },
     iconPosition: {
       left: {
-        flexDirection: "row",
+        flexDirection: 'row',
       },
       right: {
-        flexDirection: "row-reverse",
+        flexDirection: 'row-reverse',
       },
     },
   },
   defaultVariants: {
-    visibility: "visible",
-    iconPosition: "left",
+    visibility: 'visible',
+    iconPosition: 'left',
   },
 });
