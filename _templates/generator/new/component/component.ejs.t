@@ -1,11 +1,8 @@
 ---
 to: src/components/<%= name.toLowerCase() %>/<%= name %>.tsx
 ---
-import { type ComponentProps } from "react";
-
-import { styled } from "../../../styled-system/jsx";
-
-export interface <%= name %>Props extends ComponentProps<"div"> {}
+import { Styled<%= name %> } from "./<%= name %>.styled";
+import type { <%= name %>Props } from "./<%= name %>.types";
 
 const <%= name %> = ({ children }: <%= name %>Props) => {
   return (
@@ -18,9 +15,3 @@ const <%= name %> = ({ children }: <%= name %>Props) => {
 <%= name %>.displayName = "<%= name %>";
 
 export default <%= name %>;
-
-const Styled<%= name %> = styled("div", {
-  base: {},
-  variants: {},
-  defaultVariants: {},
-});
