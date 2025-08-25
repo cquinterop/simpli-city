@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Download } from 'lucide-react';
 import Button from './Button';
 
-const meta: Meta<typeof Button> = {
+const meta = {
   title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
@@ -24,7 +24,7 @@ const meta: Meta<typeof Button> = {
       control: 'boolean',
     },
   },
-};
+} satisfies Meta<typeof Button>;
 
 export default meta;
 
